@@ -1,0 +1,131 @@
+/**
+* @version 3.2.5
+* @package PWebContact
+* @copyright © 2014 Perfect Web sp. z o.o., All rights reserved. http://www.perfect-web.co
+* @license GNU General Public License http://www.gnu.org/licenses/gpl-3.0.html
+* @author Piotr Moćko
+*/
+
+/* Font family and size */
+.pweb-form-red .pwebcontact-box,
+.pweb-form-red form.pwebcontact-form label
+.pweb-form-red form.pwebcontact-form input,
+.pweb-form-red form.pwebcontact-form textarea,
+.pweb-form-red form.pwebcontact-form select,
+.pweb-form-red form.pwebcontact-form button,
+.pweb-form-red form.pwebcontact-form .btn {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+
+/* Links */
+.pweb-form-red form.pwebcontact-form a,
+.pweb-form-red .pweb-button-close{
+    color: #bd362f;
+	text-decoration: none;
+	background: none;
+}
+.pweb-form-red form.pwebcontact-form a:hover {
+    text-decoration: underline;
+}
+
+/* Labels invalid */
+.pweb-form-red form.pwebcontact-form .invalid,
+.pweb-form-red form.pwebcontact-form .invalid a {
+	color: #f00 !important;
+}
+/* Fields */
+.pweb-form-red form.pwebcontact-form input.pweb-input, 
+.pweb-form-red form.pwebcontact-form select, 
+.pweb-form-red form.pwebcontact-form textarea {
+	background: #fff;
+	color: #333;
+	border: 1px solid #aaa;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.2) inset;
+}
+/* Fields shadow */
+.pweb-form-red.pweb-shadow form.pwebcontact-form input.pweb-input, 
+.pweb-form-red.pweb-shadow form.pwebcontact-form select, 
+.pweb-form-red.pweb-shadow form.pwebcontact-form textarea {
+	-webkit-box-shadow: 0 0 5px #bbb, 0 1px 2px rgba(0,0,0,0.2) inset;
+	-moz-box-shadow: 0 0 5px #bbb, 0 1px 2px rgba(0,0,0,0.2) inset;
+	box-shadow: 0 0 5px #bbb, 0 1px 2px rgba(0,0,0,0.2) inset;
+}
+/* Fields invalid */
+.pweb-form-red form.pwebcontact-form input.invalid.pweb-input, 
+.pweb-form-red form.pwebcontact-form select.invalid, 
+.pweb-form-red form.pwebcontact-form textarea.invalid { 
+	border-color: #f00 !important;
+	-webkit-box-shadow: 0 0 5px #f00, 0 1px 2px rgba(0,0,0,0.2) inset !important;
+	-moz-box-shadow: 0 0 5px #f00, 0 1px 2px rgba(0,0,0,0.2) inset !important;
+	box-shadow: 0 0 5px #f00, 0 1px 2px rgba(0,0,0,0.2) inset !important;
+}
+/* Fields active */
+.pweb-form-red form.pwebcontact-form input.pweb-input:focus, 
+.pweb-form-red form.pwebcontact-form select:focus, 
+.pweb-form-red form.pwebcontact-form textarea:focus {
+	border-color: #A82E2A !important;
+	-webkit-box-shadow: 0 0 5px #bd362f, 0 1px 2px rgba(0,0,0,0.2) inset !important;
+	-moz-box-shadow: 0 0 5px #bd362f, 0 1px 2px rgba(0,0,0,0.2) inset !important;
+	box-shadow: 0 0 5px #bd362f, 0 1px 2px rgba(0,0,0,0.2) inset !important;
+}
+
+/* Buttons */
+.pweb-form-red form.pwebcontact-form button,
+.pweb-form-red form.pwebcontact-form .btn {
+	color: #fff !important;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	border: 1px solid;
+	border-color: #bd362f #bd362f #A82E2A;
+	border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+	background: #bd362f;
+	background-image: -moz-linear-gradient(top,#ee5f5b,#bd362f);
+	background-image: -ms-linear-gradient(top,#ee5f5b, #bd362f);
+	background-image: -webkit-gradient(linear,0 0,0 100%,from(#ee5f5b),to(#bd362f));
+	background-image: -webkit-linear-gradient(top,#ee5f5b,#bd362f);
+	background-image: -o-linear-gradient(top,#ee5f5b,#bd362f);
+	background-image: linear-gradient(to bottom,#ee5f5b,#bd362f);
+	background-repeat: repeat-x;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+/* Buttons shadow */
+.pweb-form-red.pweb-shadow form.pwebcontact-form button,
+.pweb-form-red.pweb-shadow form.pwebcontact-form .btn {
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+/* Buttons on mouse over */
+.pweb-form-red form.pwebcontact-form button:hover,
+.pweb-form-red form.pwebcontact-form .btn:hover {
+	background-color: #bd362f;
+	background-position: 0 -30px;
+}
+
+/* Labels over fields */
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-text label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-name label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-email label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-phone label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-subject label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-password label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-date label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-textarea label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-select label,
+.pweb-form-red.pweb-labels-over form.pwebcontact-form .pweb-field-multiple label {
+	color: #aaa;
+}
+
+/* Calendar button */
+.pweb-form-red form.pwebcontact-form .pweb-calendar-btn {
+	
+}
+/* Upload progress */
+.pweb-form-red .pweb-uploader .progress.progress-striped .bar.progress-bar {
+	background-color: #bd362f;
+	background-image: none;
+}

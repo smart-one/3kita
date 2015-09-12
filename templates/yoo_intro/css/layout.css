@@ -1,0 +1,341 @@
+/* Copyright (C) YOOtheme GmbH, YOOtheme Proprietary Use License (http://www.yootheme.com/license) */
+
+/**
+ * page
+ */
+ 
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 150%;
+	color: #797971;
+}
+
+/**
+ * layout blocks
+ */
+
+ .pwebcontact-container div
+ {margin:0px } 
+ 
+ .pweb-field-container
+ {margin:8px 0 !important;}
+
+.wrapper { margin: auto; }
+
+#header {
+	position: relative;
+	z-index: 10;
+	padding: 0px 10px 30px 10px;
+	clear: both;
+}
+
+#top {
+	padding: 0px 0px 30px 0px;
+	overflow: hidden;
+	clear: both;
+}
+
+#middle {
+	padding: 0px 0px 30px 0px;
+	clear: both;
+	min-height: 300px;
+}
+
+#bottom {
+	padding: 0px 0px 30px 0px;
+	overflow: hidden;
+	clear: both;
+}
+
+#bottom2 {
+	padding: 0px 0px 30px 0px;
+	overflow: hidden;
+	clear: both;
+}
+
+#footer {
+	position: relative;
+	padding: 0px 0px 30px 0px;
+	clear: both;
+	text-align: center;
+}
+
+/**
+ * 3-column-layout
+ */
+ 
+#middle {
+	width: 100%; /** must have for IE6 and also when using float */
+	/** float: left; /** force equal height as tallest column */
+	overflow: hidden; /** chop off expanded container */
+	position: relative; /** fixes overflow hidden bug (horizontal scrollbars) in IE7 and Opera 9 (in Opera only when using a div with position: absolute inside) */
+}
+
+#middle-expand {
+	width: 200%;
+}
+
+/** column 2 */
+#main {
+	position: relative;
+	left: 50%;
+	width: 50%;
+	float: left;
+}
+
+#main-shift {
+	position: relative;
+	left: -100%;
+	/** margin-left: 215px; /* left width + spacing (set by template parameters) */
+	/** margin-right: 215px; /* right width + spacing (set by template parameters) */
+	overflow: hidden;
+}
+
+/** column 1 */
+#left {
+	position: relative;
+	left: -50%;
+	/** width: 200px; /* set by template parameters */
+	float: left;
+	overflow:hidden;
+}
+
+/** column 3 */
+#right {
+	/** width: 200px; /* set by template parameters */
+	/** margin-left: -400px; /* left + right width (set by template parameters) */
+	float: left;
+	overflow:hidden;
+}
+
+/**
+ * inner layout blocks
+ */
+
+div#maintop,
+div#contenttop {
+	margin: 0px 0px 20px 0px;
+	overflow: hidden;
+}
+
+div#contentbottom,
+div#mainbottom {
+	margin: 20px 0px 0px 0px;
+	overflow: hidden;
+}
+
+/**
+ * inner 3-column-layout
+ */
+ 
+#mainmiddle {
+	width: 100%; /** must have for IE6 and also when using float */
+	/** float: left; /** force equal height as tallest column */
+	overflow: hidden; /** chop off expanded container */
+	position: relative; /** fixes overflow hidden bug (horizontal scrollbars) in IE7 and Opera 9 (in Opera only when using a div with position: absolute inside) */
+}
+
+#mainmiddle-expand {
+	width: 200%;
+}
+
+/** column 2 */
+#content {
+	position: relative;
+	left: 50%;
+	width: 50%;
+	float: left;
+}
+
+#content-shift {
+	position: relative;
+	left: -100%;
+	/** margin-left: 115px; /* left width + spacing (set by template parameters) */
+	/** margin-right: 115px; /* right width + spacing (set by template parameters) */
+	overflow: hidden;
+}
+
+/** column 1 */
+#contentleft {
+	position: relative;
+	left: -50%;
+	/** width: 100px; /* set by template parameters */
+	float: left;
+	overflow:hidden;
+}
+
+/** column 3 */
+#contentright {
+	/** width: 100px; /* set by template parameters */
+	/** margin-left: -200px; /* left + right width (set by template parameters) */
+	float: left;
+	overflow:hidden;
+}
+
+/**
+ * float-box-layout
+ */
+
+.floatbox { overflow:hidden; }
+
+.float-left { float: left; overflow: hidden; }
+.float-right { float: right; overflow: hidden; }
+
+.width15 { width: 15%; }
+.width18 { width: 18%; }
+.width20 { width: 20%; }
+.width23 { width: 23%; }
+.width25 { width: 25%; }
+.width33 { width: 33%; }
+.width34 { width: 34%; }
+.width35 { width: 35%; }
+.width40 { width: 40%; }
+.width46 { width: 46%; }
+.width50 { width: 50%; }
+.width54 { width: 54%; }
+.width65 { width: 65%; }
+.width75 { width: 75%; }
+.width100 { width: 100%; }
+
+/**
+ * backgrounds
+ */
+
+body.yoopage { background: #ABAAA1; }
+#page-body { background: #F5F4EB url(../images/page_body_bg.png) 50% 0 repeat-x; }
+#page-footer { 
+	padding-top: 30px;
+	background: url(../images/page_footer_bg.png) 50% 0 repeat-x;
+}
+
+/**
+ * module wrappers
+ */
+
+#absolute {
+	position: absolute;
+	z-index: 15;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+/**
+ * header
+ */
+
+/** bars */
+#headerbar {
+	min-height: 80px;
+	padding: 80px 0px 20px 300px;
+	overflow: hidden;
+	border-bottom: 3px solid #CDCCC3;	
+}
+
+/** breadcrumbs */
+#breadcrumbs {
+	height: 30px;
+	border-bottom: 3px solid #CDCCC3;
+	overflow: hidden;
+	line-height: 30px;
+	font-size: 12px;
+	text-shadow: 1px 1px 1px rgba(255,255,255,1);
+	text-transform: uppercase;
+}
+
+#breadcrumbs a,
+#breadcrumbs span {
+	display: block;
+	float: left;
+}
+
+#breadcrumbs a,
+#breadcrumbs span.separator {
+	margin-right: 10px;
+	padding-right: 20px;
+	background: url(../images/breadcrumbs.png) 100% 11px no-repeat;
+}
+
+#breadcrumbs a:link,
+#breadcrumbs a:visited { color: #E99D01; }
+#breadcrumbs a:hover { color: #EB5F2B; }
+
+/** absolute */
+#logo {
+	position: absolute;
+	top: 45px;
+	left: 10px;
+}
+
+#menu {
+	position: absolute;
+	top: 5px;
+	left: 6px;
+	z-index: 11;
+}
+
+#search {
+	position: absolute;
+	bottom: 38px;
+	right: 10px;
+	z-index: 10;
+}
+
+#banner {
+	position: absolute;
+	top: 150px;
+	right: -15px;
+	width: 0px;
+	z-index: 3;
+}
+
+/**
+ * footer
+ */
+ 
+#footer {
+	color: #ffffff;
+	text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+#footer a.anchor {
+	position: absolute;
+	right: 5px;
+	top: 0px;
+	width: 25px;
+	height: 20px;
+	background: url(../images/footer_anchor.png) 0 0 no-repeat;
+	display: block;
+	text-decoration: none;
+}
+
+#footer a.anchor:hover { background-position: 0 -15px; }
+
+/**
+ * bottom line
+ */
+
+div.bottom-line {
+	margin: 0px 10px 30px 10px;
+	border-top: 3px solid #CDCCC3;
+	overflow: hidden;
+}
+
+/**
+ * core output wrapper
+ */
+
+#component { margin: 0px 10px 0px 10px; }
+
+body.nofrontpage #component {
+	margin: 0px 10px 0px 10px;
+	padding: 1px;
+	border: 1px solid #CDCCC3;
+	background: #ffffff;
+}
+
+body.nofrontpage #component .component-bg {
+	padding: 10px;
+	background: url(../images/module_box_bg.png) 0 0 repeat-x;
+}

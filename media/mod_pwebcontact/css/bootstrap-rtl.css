@@ -1,0 +1,32 @@
+/*!
+ * Bootstrap v2.3.2
+ *
+ * Copyright 2012 Twitter, Inc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * @version 3.0.3
+ * @package PWebContact
+ * 
+ * Redeclared styles only for contact form
+ */
+form.pwebcontact-form .tip-text {
+	text-align: right;
+}
+
+.pweb-alert.alert {
+	padding-right: 14px;
+	padding-left: 35px;
+}
+.pweb-alert.alert .close {
+	left: -21px;
+	right: auto;
+}
+
+.pweb-alert .close {
+	float: left;
+}
+
+form.pwebcontact-form .tooltip-inner {
+	text-align: right;
+}

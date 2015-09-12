@@ -1,0 +1,85 @@
+/**
+* @version 3.2.6
+* @package PWebContact
+* @copyright © 2014 Perfect Web sp. z o.o., All rights reserved. http://www.perfect-web.co
+* @license GNU General Public License http://www.gnu.org/licenses/gpl-3.0.html
+* @author Piotr Moćko
+*/
+
+/* Form background */
+.pweb-bg-gray .pwebcontact-container,
+.pweb-bg-gray.ui-effects-transfer.pweb-genie {
+	background-color: #a2a2a2;
+}
+.pweb-bg-gray.pweb-slidebox .pwebcontact-container {
+	border: 1px solid #999;
+	border-color: rgba(0,0,0,0.2);
+	background-color: rgba(162,162,162, 0.9);
+}
+
+/* Text color */
+.pweb-bg-gray form.pwebcontact-form label,
+.pweb-bg-gray form.pwebcontact-form .pweb-separator-text,
+.pweb-bg-gray form.pwebcontact-form .pweb-msg,
+.pweb-bg-gray form.pwebcontact-form .pweb-chars-counter,
+.pweb-bg-gray form.pwebcontact-form .pweb-uploader,
+.pweb-bg-gray .pwebcontact-box .pweb-dropzone {
+	color: #333;
+}
+
+/* Message success */
+.pweb-bg-gray form.pwebcontact-form .pweb-msg .pweb-success {
+	color: #009E0A;
+}
+/* Message error */
+.pweb-bg-gray form.pwebcontact-form .pweb-msg .pweb-error {
+	color: #A80000;
+}
+
+/* Star of required fields */
+.pweb-bg-gray form.pwebcontact-form label .pweb-asterisk {
+	color: #f00;
+}
+
+/* Accordion Box */
+.pweb-bg-gray.pwebcontact-box.pweb-accordion.pweb-accordion-boxed .pwebcontact-container {
+ 	-moz-box-shadow: inset 0 0 4px rgba(0,0,0, 0.7);
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0, 0.7);
+ 	box-shadow: inset 0 0 4px rgba(0,0,0, 0.7);
+	border-color: #4E4E4E;
+	border-color: rgba(0,0,0, 0.7);
+}
+.pweb-bg-gray.pwebcontact-box.pweb-accordion.pweb-accordion-boxed.pweb-shadow .pwebcontact-container {
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 4px rgba(0,0,0, 0.7);
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 4px rgba(0,0,0, 0.7);
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.5), inset 0 0 4px rgba(0,0,0, 0.7);
+}
+ /* Accordion Arrow */
+.pweb-bg-gray.pwebcontact-box.pweb-accordion.pweb-accordion-boxed .pweb-arrow {
+	border-bottom-color: #4E4E4E;
+	border-bottom-color: rgba(0,0,0, 0.8);
+}
+
+/* Lightbox Window */
+.pweb-bg-gray.pwebcontact-box.pweb-modal .pwebcontact-container,
+.pweb-bg-gray.ui-effects-transfer.pweb-genie {
+	border: 1px solid #999;
+	border-color: rgba(0,0,0,0.3);
+}
+/* Lightbox Window close button */
+.pweb-bg-gray.pwebcontact-box.pweb-modal .close {
+	
+}
+/* Lightbox Window overlay */
+body.pweb-modal-gray .modal-backdrop.fade.in {
+	
+}
+
+/* Upload dropzone */
+.pweb-bg-gray.pwebcontact-box.pweb-dragged .pweb-dropzone {
+	background-color: #a2a2a2;
+	background-color: rgba(162, 162, 162, 0.7);
+	-moz-box-shadow: 0 0 50px rgba(0,0,0, 0.2) inset;
+	-webkit-box-shadow: 0 0 50px rgba(0,0,0, 0.2) inset;
+	box-shadow: 0 0 50px rgba(0,0,0, 0.2) inset;
+}

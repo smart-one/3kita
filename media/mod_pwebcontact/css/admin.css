@@ -1,0 +1,194 @@
+/**
+* @version 3.0
+* @package PWebContact
+* @copyright © 2014 Perfect Web sp. z o.o., All rights reserved. http://www.perfect-web.co
+* @license GNU General Public License http://www.gnu.org/licenses/gpl-3.0.html
+* @author Piotr Moćko
+*/
+
+.pweb-description, .pweb-description label {
+	line-height: 210%;
+}
+.controls .pweb-description {
+	padding-top: 5px;
+}
+
+#attrib-FIELDS > .control-group > .controls,
+#options-FIELDS > .control-group > .controls {
+	margin-left: 0;
+}
+
+/* Button */
+.pweb-actions {
+	line-height: 200%;
+}
+.pweb-actions,
+.pweb-fields-tip {
+	margin-bottom: 18px;
+}
+.pweb-btn {
+	margin-left: 10px;
+	text-decoration: none;
+}
+.pweb-actions .btn {
+	margin-right: 5px;
+}
+
+.pweb-container {
+	border-top: 1px solid #CFD1D3;
+}
+.pweb-container .control-container .control-group:first-child {
+	padding-top: 18px;
+}
+
+.pweb-group-name {
+	padding-left: 11px;
+}
+.pweb-group-name label {
+	font-weight: bold;
+}
+
+/* Subcontainer with field options */
+.pweb-subcontainer {
+	border: 1px solid #CFD1D3;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	background: #F2F4F7;
+	background: -moz-linear-gradient(top,#F2F4F7 0%,#EDEFF2 100%);
+	background: -webkit-gradient(linear, 0 0, 0 100%, from(#F2F4F7), to(#EDEFF2));
+	background: -webkit-linear-gradient(top,#F2F4F7 0%,#EDEFF2 100%);
+	background: -ms-linear-gradient(#F2F4F7, #EDEFF2);
+	background: -o-linear-gradient(top,#F2F4F7 0%,#EDEFF2 100%);
+	background: linear-gradient(top,#F2F4F7 0%,#EDEFF2 100%);
+	-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 0 #FFF;
+	-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 0 #FFF;
+	box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 1px 0 #FFF;
+	position: relative;
+	padding: 18px 10px;
+}
+.pweb-subcontainer .pweb-subcontainer-tip {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+	top: -10px;
+	left: 30px;
+	border-width: 0 10px 10px 10px;
+	border-bottom-color: #CFD1D3;
+}
+.pweb-subcontainer .control-group:last-child {
+	margin-bottom: 0;
+}
+.pweb-hidden .pweb-subcontainer {
+	overflow: hidden;
+	height: 0 !important;
+	padding: 0 !important;
+	border-width: 1px 0 0 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.pweb-hidden .pweb-subcontainer .pweb-subcontainer-tip {
+	display: none;
+}
+
+.pweb-separator {
+	border-bottom: 1px solid #CFD1D3;
+}
+
+/* Drag and drop sortable list */
+.pweb-draggable.control-container label, .pweb-dragged.control-container, .pweb-dragged.control-container * {
+	cursor: move !important;
+}
+.pweb-dragged.control-container {
+	background-color: #5bb75b;
+}
+
+/* Email HTML template preview, Copy code */
+.pweb-email-preview-button, .pweb-copy-code-button {
+	display: inline-block;
+	margin-left: 10px;
+	padding-top: 5px;
+	vertical-align: top;
+}
+
+/* Module position */
+fieldset.radio.pwebpositions {
+	padding-left: 0;
+}
+fieldset.radio.pwebpositions label, td.paramlist_value.pwebpositions label {
+	float: left;
+	margin: 0 0 0 -82px;
+	padding: 3px !important;
+	height: 50px;
+	width: 76px;
+}
+fieldset.radio.pwebpositions input, td.paramlist_value.pwebpositions input {
+	float: left;
+	margin: 3px 82px 35px 0;
+	padding: 0;
+	height: 18px;
+	line-height: 18px;
+}
+
+
+.pwebposition-left, .pwebposition-right,
+.pwebposition-top-left, .pwebposition-top-right,
+.pwebposition-bottom-left, .pwebposition-bottom-right,
+.pwebposition-static {
+	display: block; 
+	border: 1px solid #aaa;
+	width: 50px; 
+	height: 30px; 
+	position: relative;
+	cursor: pointer;
+	-moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.pwebposition-left > span, .pwebposition-right > span,
+.pwebposition-top-left > span, .pwebposition-top-right > span,
+.pwebposition-bottom-left > span, .pwebposition-bottom-right > span,
+.pwebposition-static > span {
+	display: block;
+	border: 1px solid #1B7189;
+	background: #49AFCD;
+	width: 12px;
+	height: 8px;
+	position: absolute;
+}
+.pwebposition-left > span, .pwebposition-right > span {
+	width: 8px;
+	height: 12px;
+}
+.pwebposition-left > span { left: 0; top: 13px; }
+.pwebposition-right > span { right: 0; top: 13px; }
+.pwebposition-top-left > span { left: 13px; top: 0; }
+.pwebposition-top-right > span { right: 13px; top: 0; }
+.pwebposition-bottom-left > span { left: 13px; bottom: 0; }
+.pwebposition-bottom-right > span { right: 13px; bottom: 0; }
+.pwebposition-static > span { left: 18px; top: 10px; }
+
+
+.pwebposition-left > span + span, .pwebposition-right > span + span,
+.pwebposition-top-left > span + span, .pwebposition-top-right > span + span,
+.pwebposition-bottom-left > span + span, .pwebposition-bottom-right > span + span {
+	border: 0;
+	background: none;
+	width: 13px;
+	height: 13px;
+	line-height: 10px;
+	text-align: center;
+	color: #BD362F;
+	font-size: 13px;
+}
+.pwebposition-left > span + span { left: 0; top: 0; }
+.pwebposition-right > span + span { right: 0; top: 0; }
+.pwebposition-top-left > span + span { left: 0; top: 0; }
+.pwebposition-top-right > span + span { right: 0; top: 0; }
+.pwebposition-bottom-left > span + span { left: 0; bottom: 0; }
+.pwebposition-bottom-right > span + span { right: 0; bottom: 0; }
