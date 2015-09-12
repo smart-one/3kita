@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>System - Perfect Joomla! 3 User Interface and jQuery Includer</name>
+	<creationDate>2014-07-11</creationDate>
+	<author>Piotr Moćko</author>
+	<copyright>Copyright (C) 2013 Perfect Web sp. z o.o., All rights reserved.</copyright>
+	<license>GNU General Public Licence http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>office@perfect-web.co</authorEmail>
+	<authorUrl>http://www.perfect-web.co</authorUrl>
+	<version>1.9</version>
+	<description>This plugin includes Joomla! 3 User Interface libraries with jQuery 1.11.1, jQuery UI 1.9.2, jQuery Migrate 1.2.1, Bootstrap 2.3.2, IcoMoon, LESS and others. Also it can remove other instances of jQuery and include only one.</description>
+	
+	<files>
+		<filename plugin="pwebj3ui">pwebj3ui.php</filename>
+		<filename>index.html</filename>
+		<folder>libraries</folder>
+		<folder>media</folder>
+	</files>
+	
+	<scriptfile>installer.script.php</scriptfile>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				
+				<field name="enable" type="radio" class="btn-group" default="0"
+					label="Enable plugin on"
+				>
+					<option value="1">Site</option>
+					<option value="2">Admin</option>
+					<option value="3">Both</option>
+				</field>
+				<field name="load_jquery" type="radio" class="btn-group" default="0"
+					label="Load jQuery" 
+					description="jQuery would be loaded for all pages"
+				>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">Only on Desktop</option>
+					<option value="3">Only on Mobile</option>
+				</field>
+				<field name="load_jquery_ui" type="radio" class="btn-group" default="0"
+					label="Load jQuery UI" 
+					description="jQuery UI would be loaded for all pages"
+				>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">Only on Desktop</option>
+					<option value="3">Only on Mobile</option>
+				</field>
+				<field name="load_bootstrap_js" type="radio" class="btn-group" default="0"
+					label="Load Bootstrap JS" 
+					description="Bootstrap JavaScript would be loaded for all pages"
+				>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">Only on Desktop</option>
+					<option value="3">Only on Mobile</option>
+				</field>
+				<field name="load_bootstrap_css" type="radio" class="btn-group" default="0"
+					label="Load Bootstrap CSS" 
+					description="Bootstrap CSS would be loaded for all pages"
+				>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">Only on Desktop</option>
+					<option value="3">Only on Mobile</option>
+				</field>
+				<field name="remove_jquery" type="radio" class="btn-group" default="0"
+					label="Remove other jQuery" 
+					description="Removes multiple files with jQuery to prevent JavaScript conflicts. All Joomla native files from directory media/jui/js/ will not be removed. jQuery files to be removed: jquery.js, jquery.min.js, jquery-latest.js, jquery-latest.min.js, jquery-x.x.x.js, jquery-x.x.x.min.js"
+				>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">Only on Desktop</option>
+					<option value="3">Only on Mobile</option>
+				</field>
+				<field name="remove" type="radio" class="btn-group" default="0"
+					label="Remove below files" 
+					description="Removes all unnecesary JavaScript files which can not be disabled in extension configuration."
+				>
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="remove_includes" type="textarea" cols="50" rows="5" class="input-xxlarge" 
+					label="JavaScript files to remove on Desktop" 
+					description="List of JavaScript files to be removed on Desktop browsers. Separate files with coma. All Joomla native files from directory media/jui/js/ and media/system/js/ will not be removed." 
+					onchange="this.value=this.value.replace(/\s+/g, '')" />
+				<field name="remove_mobile_includes" type="textarea" cols="50" rows="5" class="input-xxlarge" 
+					label="JavaScript files to remove on Mobile" 
+					description="List of JavaScript files to be removed on Mobile browsers. Separate files with coma. All Joomla native files from directory media/jui/js/ and media/system/js/ will not be removed." 
+					onchange="this.value=this.value.replace(/\s+/g, '')" />
+			
+			</fieldset>
+		</fields>
+	</config>
+									
+</extension>

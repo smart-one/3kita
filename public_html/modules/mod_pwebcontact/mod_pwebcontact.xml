@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.5" client="site" method="upgrade">
+	<name>Perfect AJAX Popup Contact Form</name>
+	<creationDate>29-04-2014</creationDate>
+	<author>Piotr Moćko</author>
+	<copyright>Copyright (C) 2014 Perfect Web sp. z o.o., All rights reserved.</copyright>
+	<license>GNU General Public License http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>office@perfect-web.co</authorEmail>
+	<authorUrl>http://www.perfect-web.co</authorUrl>
+	<version>3.2.8</version>
+	<description>MOD_PWEBCONTACT_XML_DESCRIPTION</description>
+	
+	<languages folder="lang">
+		<language tag="en-GB">en-GB.mod_pwebcontact.ini</language>
+		<language tag="en-GB">en-GB.mod_pwebcontact.sys.ini</language>
+		<language tag="en-GB">en-GB.mod_pwebcontact_admin.ini</language>
+		
+		<language tag="ar-AA">ar-AA.mod_pwebcontact.ini</language>
+		<language tag="bg-BG">bg-BG.mod_pwebcontact.ini</language>
+		<language tag="ca-ES">ca-ES.mod_pwebcontact.ini</language>
+		<language tag="cs-CZ">cs-CZ.mod_pwebcontact.ini</language>
+		<language tag="da-DK">da-DK.mod_pwebcontact.ini</language>
+		<language tag="de-DE">de-DE.mod_pwebcontact.ini</language>
+		<language tag="el-GR">el-GR.mod_pwebcontact.ini</language>
+		<language tag="es-ES">es-ES.mod_pwebcontact.ini</language>
+		<language tag="et-EE">et-EE.mod_pwebcontact.ini</language>
+		<language tag="fi-FI">fi-FI.mod_pwebcontact.ini</language>
+		<language tag="fr-FR">fr-FR.mod_pwebcontact.ini</language>
+		<language tag="he-IL">he-IL.mod_pwebcontact.ini</language>
+		<language tag="hi-IN">hi-IN.mod_pwebcontact.ini</language>
+		<language tag="hr-HR">hr-HR.mod_pwebcontact.ini</language>
+		<language tag="hu-HU">hu-HU.mod_pwebcontact.ini</language>
+		<language tag="id-ID">id-ID.mod_pwebcontact.ini</language>
+		<language tag="it-IT">it-IT.mod_pwebcontact.ini</language>
+		<language tag="lt-LT">lt-LT.mod_pwebcontact.ini</language>
+		<language tag="lv-LV">lv-LV.mod_pwebcontact.ini</language>
+		<language tag="ja-JP">ja-JP.mod_pwebcontact.ini</language>
+		<language tag="ms-MY">ms-MY.mod_pwebcontact.ini</language>
+		<language tag="nb-NO">nb-NO.mod_pwebcontact.ini</language>
+		<language tag="nl-NL">nl-NL.mod_pwebcontact.ini</language>
+		<language tag="nn-NO">nn-NO.mod_pwebcontact.ini</language>
+		<language tag="pl-PL">pl-PL.mod_pwebcontact.ini</language>
+		<language tag="pt-PT">pt-PT.mod_pwebcontact.ini</language>
+		<language tag="ro-RO">ro-RO.mod_pwebcontact.ini</language>
+		<language tag="ru-RU">ru-RU.mod_pwebcontact.ini</language>
+		<language tag="sk-SK">sk-SK.mod_pwebcontact.ini</language>
+		<language tag="sl-SL">sl-SL.mod_pwebcontact.ini</language>
+		<language tag="sr-RS">sr-RS.mod_pwebcontact.ini</language>
+		<language tag="sr-YU">sr-YU.mod_pwebcontact.ini</language>
+		<language tag="sv-SE">sv-SE.mod_pwebcontact.ini</language>
+		<language tag="th-TH">th-TH.mod_pwebcontact.ini</language>
+		<language tag="tr-TR">tr-TR.mod_pwebcontact.ini</language>
+		<language tag="uk-UA">uk-UA.mod_pwebcontact.ini</language>
+		<language tag="vn-VI">vn-VI.mod_pwebcontact.ini</language>
+		<language tag="zh-CN">zh-CN.mod_pwebcontact.ini</language>
+	</languages>
+	
+	<files>
+		<filename module="mod_pwebcontact">mod_pwebcontact.php</filename>
+		<folder>form</folder>
+		<folder>helpers</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>ajax.php</filename>
+		<filename>helper.php</filename>
+	</files>
+	
+	<media destination="mod_pwebcontact">
+		<folder>css</folder>
+		<folder>email_tmpl</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>upload</folder>
+		<folder>tickets</folder>
+		<filename>index.html</filename>
+	</media>
+	
+	<scriptfile>installer.script.php</scriptfile>
+	
+	<config>
+		<fields name="params">
+		
+	<!-- Basic Configuration -->
+			<fieldset name="basic" addfieldpath="/modules/mod_pwebcontact/form/fields" addrulepath="/modules/mod_pwebcontact/form/rules">				
+				
+				<field type="pweblanguage" />
+				<field type="pwebtip" tip="version" label="MOD_PWEBCONTACT_VERSION" />
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_DEFAULTS" />
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				<field type="pweblegacy" />
+				
+				<field name="layout_type" type="list" default="slidebox" label="MOD_PWEBCONTACT_LAYOUT" description="MOD_PWEBCONTACT_LAYOUT_DESC">
+					<option value="slidebox">MOD_PWEBCONTACT_LAYOUT_SLIDEBOX</option>
+					<option value="modal">MOD_PWEBCONTACT_LAYOUT_MODAL</option>
+					<option value="accordion">MOD_PWEBCONTACT_LAYOUT_ACCORDION</option>
+					<option value="static">MOD_PWEBCONTACT_LAYOUT_STATIC</option>
+				</field>
+				<field name="position" type="radio" class="pwebpositions" default="left:top" label="MOD_PWEBCONTACT_POSITION" description="MOD_PWEBCONTACT_POSITION_DESC">
+					<option value="left:top">MOD_PWEBCONTACT_OPTION_POSITION_LEFT</option>
+					<option value="right:top">MOD_PWEBCONTACT_OPTION_POSITION_RIGHT</option>
+					<option value="top:left">MOD_PWEBCONTACT_OPTION_POSITION_TOP_LEFT</option>
+					<option value="top:right">MOD_PWEBCONTACT_OPTION_POSITION_TOP_RIGHT</option>
+					<option value="bottom:left">MOD_PWEBCONTACT_OPTION_POSITION_BOTTOM_LEFT</option>
+					<option value="bottom:right">MOD_PWEBCONTACT_OPTION_POSITION_BOTTOM_RIGHT</option>
+					<option value="static:">MOD_PWEBCONTACT_OPTION_POSITION_STATIC</option>
+				</field>
+				<field name="offset" type="text" filter="string" class="pweb-filter-unit input-mini" size="10" label="MOD_PWEBCONTACT_OFFSET" description="MOD_PWEBCONTACT_OFFSET_DESC" />
+				<field name="zindex" type="text" filter="string" class="pweb-filter-int input-mini" size="10" label="MOD_PWEBCONTACT_ZINDEX" description="MOD_PWEBCONTACT_ZINDEX_DESC" />
+				
+			</fieldset>
+			
+	<!-- Theme Configuration -->
+			<fieldset name="THEME">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_DEFAULTS" />
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_STYLE_HEADER" />
+				<field name="style_toggler" type="filelist" default="blue" label="MOD_PWEBCONTACT_STYLE_TAB" description="MOD_PWEBCONTACT_STYLE_TAB_DESC" 
+					directory="media/mod_pwebcontact/css/toggler" filter="\.css$" stripext="true" hide_default="true" />
+				<field name="style_form" type="filelist" default="blue" label="MOD_PWEBCONTACT_STYLE_FORM" description="MOD_PWEBCONTACT_STYLE_FORM_DESC" 
+					directory="media/mod_pwebcontact/css/form" filter="\.css$" stripext="true" hide_default="true" />
+				<field name="style_bg" type="filelist" default="white" label="MOD_PWEBCONTACT_STYLE_BG" description="MOD_PWEBCONTACT_STYLE_BG_DESC" 
+					directory="media/mod_pwebcontact/css/background" filter="\.css$" stripext="true" hide_default="true" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_COLOR_HEADER" />
+				<field name="toggler_bg" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_TOGGLER_BG" description="MOD_PWEBCONTACT_TOGGLER_BG_DESC" />
+				<field name="toggler_color" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_TOGGLER_TEXT_COLOR" description="MOD_PWEBCONTACT_TOGGLER_TEXT_COLOR_DESC" />
+				
+				<field name="buttons_fields_color" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_FORM_COLOR" description="MOD_PWEBCONTACT_FORM_COLOR_DESC" />
+				<field name="buttons_text_color" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_BUTTONS_COLOR" description="MOD_PWEBCONTACT_BUTTONS_COLOR_DESC" />
+				
+				<field name="text_color" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_TEXT_COLOR" description="MOD_PWEBCONTACT_TEXT_COLOR_DESC" />
+				<field name="bg_color" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_BG_COLOR" description="MOD_PWEBCONTACT_BG_COLOR_DESC" />
+				<field name="bg_opacity" type="list" default="0.9" label="MOD_PWEBCONTACT_BG_COLOR_OPACITY" description="MOD_PWEBCONTACT_BG_COLOR_OPACITY_DESC">
+					<option value="0.1">0.1</option>
+					<option value="0.2">0.2</option>
+					<option value="0.3">0.3</option>
+					<option value="0.4">0.4</option>
+					<option value="0.5">0.5</option>
+					<option value="0.6">0.6</option>
+					<option value="0.7">0.7</option>
+					<option value="0.8">0.8</option>
+					<option value="0.9">0.9</option>
+					<option value="1.0">1.0</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_THEME_HEADER" />
+				<field name="rounded" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_ROUNDED" description="MOD_PWEBCONTACT_ROUNDED_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="shadow" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_SHADOW" description="MOD_PWEBCONTACT_SHADOW_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="icons" type="radio" class="btn-group" default="icomoon" label="MOD_PWEBCONTACT_ICONS" description="MOD_PWEBCONTACT_ICONS_DESC">
+					<option value="icomoon">IcoMoon</option>
+					<option value="glyphicons">Bootstrap Glyphicons</option>
+				</field>
+				<field type="spacer" name="MOD_PWEBCONTACT_FIELDS_WIDTH" />
+				<field name="form_width" type="text" class="pweb-filter-unit input-mini" size="10" label="MOD_PWEBCONTACT_FORM_WIDTH" description="MOD_PWEBCONTACT_FORM_WIDTH_DESC" />
+				<field name="labels_width" type="text" class="pweb-filter-int input-mini" size="10" label="MOD_PWEBCONTACT_LABELS_WIDTH" description="MOD_PWEBCONTACT_LABELS_WIDTH_DESC" />
+				<field name="labels_position" type="list" default="inline" label="MOD_PWEBCONTACT_LABELS_POSITION" description="MOD_PWEBCONTACT_LABELS_POSITION_DESC">
+					<option value="inline">MOD_PWEBCONTACT_OPTION_INLINE</option>
+					<option value="above">MOD_PWEBCONTACT_OPTION_ABOVE</option>
+					<option value="over">MOD_PWEBCONTACT_OPTION_OVER</option>
+				</field>
+				<field name="form_font_size" type="text" filter="string" class="pweb-filter-unit input-mini" size="10" 
+					label="MOD_PWEBCONTACT_FORM_FONT_SIZE" description="MOD_PWEBCONTACT_FORM_FONT_SIZE_DESC" />
+				<field name="form_font_family" type="text" filter="string" 
+					label="MOD_PWEBCONTACT_FORM_FONT_FAMILY" description="MOD_PWEBCONTACT_FORM_FONT_FAMILY_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_BG_IMAGE_HEADER" />
+				<field name="bg_image" type="media" label="MOD_PWEBCONTACT_BG_IMAGE" description="MOD_PWEBCONTACT_BG_IMAGE_DESC" />
+				<field name="bg_position" type="list" label="MOD_PWEBCONTACT_BG_IMAGE_POSITION" description="MOD_PWEBCONTACT_BG_IMAGE_POSITION_DESC">
+					<option value="">JOPTION_USE_DEFAULT</option>
+					<option value="left top">left top</option>
+					<option value="left center">left center</option>
+					<option value="left bottom">left bottom</option>
+					<option value="right top">right top</option>
+					<option value="right center">right center</option>
+					<option value="right bottom">right bottom</option>
+					<option value="center top">center top</option>
+					<option value="center center">center center</option>
+					<option value="center bottom">center bottom</option>
+				</field>
+				<field name="bg_padding_position" type="list" label="MOD_PWEBCONTACT_BG_IMAGE_PADDING_POSITION" description="MOD_PWEBCONTACT_BG_IMAGE_PADDING_POSITION_DESC">
+					<option value="">JDISABLED</option>
+					<option value="left">left</option>
+					<option value="right">right</option>
+					<option value="top">top</option>
+					<option value="bottom">bottom</option>
+				</field>
+				<field name="bg_padding" type="text" class="pweb-filter-unit input-mini" size="10" label="MOD_PWEBCONTACT_BG_IMAGE_PADDING" description="MOD_PWEBCONTACT_BG_IMAGE_PADDING_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_ACCORDION_HEADER" />
+				<field name="accordion_boxed" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_ACCORDION_BOXED" description="MOD_PWEBCONTACT_ACCORDION_BOXED_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_MODAL_HEADER" />
+				<field name="modal_bg" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_MODAL_BG_COLOR" description="MOD_PWEBCONTACT_MODAL_BG_COLOR_DESC" />
+				<field name="modal_opacity" type="list" label="MOD_PWEBCONTACT_MODAL_OPACITY" description="MOD_PWEBCONTACT_MODAL_OPACITY_DESC">
+					<option value="-1">JOPTION_USE_DEFAULT</option>
+					<option value="0">JHide</option>
+					<option value="0.1">0.1</option>
+					<option value="0.2">0.2</option>
+					<option value="0.3">0.3</option>
+					<option value="0.4">0.4</option>
+					<option value="0.5">0.5</option>
+					<option value="0.6">0.6</option>
+					<option value="0.7">0.7</option>
+					<option value="0.8">0.8</option>
+					<option value="0.9">0.9</option>
+					<option value="1.0">1.0</option>
+				</field>
+				<field name="modal_effect" type="list" default="square" label="MOD_PWEBCONTACT_MODAL_EFFECT" description="MOD_PWEBCONTACT_MODAL_EFFECT_DESC">
+					<option value="default">JOPTION_USE_DEFAULT</option>
+					<option value="square">MOD_PWEBCONTACT_MODAL_EFFECT_OPTION_SQUARE</option>
+					<option value="rotate">MOD_PWEBCONTACT_MODAL_EFFECT_OPTION_ROTATE</option>
+					<option value="smooth">MOD_PWEBCONTACT_MODAL_EFFECT_OPTION_SMOOTH</option>
+				</field>
+				<field name="modal_duration" type="text" filter="integer" class="pweb-filter-int input-mini" default="400" size="10" 
+					label="MOD_PWEBCONTACT_MODAL_DURATION" description="MOD_PWEBCONTACT_MODAL_DURATION_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_SYS_MSG_HEADER" />
+				<field name="msg_position" type="list" default="after" label="MOD_PWEBCONTACT_MSG_POSITION" description="MOD_PWEBCONTACT_MSG_POSITION_DESC">
+					<option value="before">MOD_PWEBCONTACT_MSG_POSITION_OPTION_BEFORE</option>
+					<option value="after">MOD_PWEBCONTACT_MSG_POSITION_OPTION_AFTER</option>
+					<option value="button">MOD_PWEBCONTACT_MSG_POSITION_OPTION_BUTTON</option>
+					<option value="popup">MOD_PWEBCONTACT_MSG_POSITION_OPTION_POPUP</option>
+				</field>
+				<field name="msg_success_color" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_MSG_SUCCESS_COLOR" description="MOD_PWEBCONTACT_MSG_SUCCESS_COLOR_DESC" />
+				<field name="msg_error_color" type="pwebcolor" filter="string" size="10" 
+					label="MOD_PWEBCONTACT_MSG_ERROR_COLOR" description="MOD_PWEBCONTACT_MSG_ERROR_COLOR_DESC" />
+				<field name="msg_close_delay" type="text" filter="integer" class="pweb-filter-int input-mini" default="10" size="10" 
+					label="MOD_PWEBCONTACT_MSG_CLOSE_DELAY" description="MOD_PWEBCONTACT_MSG_CLOSE_DELAY_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_FIELDS_OPTIONS_HEADER" />
+				<field name="tooltips" type="list" default="3" label="MOD_PWEBCONTACT_TOOLTIPS" description="MOD_PWEBCONTACT_TOOLTIPS_DESC">
+					<option value="0">JDISABLED</option>
+					<option value="1">MOD_PWEBCONTACT_TOOLTIPS_OPTION_ONLY_ON_HOVER</option>
+					<option value="2">MOD_PWEBCONTACT_TOOLTIPS_OPTION_ONLY_ON_ERROR</option>
+					<option value="3">MOD_PWEBCONTACT_TOOLTIPS_OPTION_ON_HOVER_ERROR</option>
+				</field>
+				<field name="user_data" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_FILL_IN_USER_DATA" description="MOD_PWEBCONTACT_FILL_IN_USER_DATA_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">MOD_PWEBCONTACT_USER_DATA_HIDDEN</option>
+				</field>
+				<field name="rules_target" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_RULES_URL_TARGET" description="MOD_PWEBCONTACT_RULES_URL_TARGET_DESC">
+					<option value="1">MOD_PWEBCONTACT_OPTION_BLANK</option>
+					<option value="2">MOD_PWEBCONTACT_OPTION_MODAL</option>
+				</field>
+				<field name="button_send" type="text" label="MOD_PWEBCONTACT_BUTTON_SEND" description="MOD_PWEBCONTACT_BUTTON_SEND_DESC" />
+				<field name="button_reset" type="text" label="MOD_PWEBCONTACT_BUTTON_RESET" description="MOD_PWEBCONTACT_BUTTON_RESET_DESC" />
+			</fieldset>
+			
+	<!-- Toggler Tab Configuration -->
+			<fieldset name="TOGGLER_TAB">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_DEFAULTS" />
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field name="show_toggler" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_SHOW_TOGGLER" description="MOD_PWEBCONTACT_SHOW_TOGGLER_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="toggler_name" type="text" class="input-xlarge" size="50" label="MOD_PWEBCONTACT_TOGGLER_NAME" description="MOD_PWEBCONTACT_TOGGLER_NAME_DESC" />
+				<field name="toggler_slide" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_TOGGLER_SLIDE" description="MOD_PWEBCONTACT_TOGGLER_SLIDE_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_ICON_HEADER" />
+				<field name="toggler_icon" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_TOGGLER_ICON_SOURCE" description="MOD_PWEBCONTACT_TOGGLER_ICON_SOURCE_DESC">
+					<option value="0">JDISABLED</option>
+					<option value="gallery">MOD_PWEBCONTACT_OPTION_GALLERY</option>
+					<option value="custom">MOD_PWEBCONTACT_OPTION_CUSTOM</option>
+					<option value="icomoon">MOD_PWEBCONTACT_OPTION_ICOMOON</option>
+				</field>
+				<field name="toggler_icon_gallery" type="imagelist" label="MOD_PWEBCONTACT_TOGGLER_ICON_GALLERY" description="MOD_PWEBCONTACT_TOGGLER_ICON_GALLERY_DESC" 
+					directory="media/mod_pwebcontact/images/icons" hide_default="true" />
+				<field name="toggler_icon_custom" type="media" label="MOD_PWEBCONTACT_TOGGLER_ICON_CUSTOM" description="MOD_PWEBCONTACT_TOGGLER_ICON_CUSTOM_DESC" />
+				<field name="toggler_icomoon" type="pwebicomoon" class="input-mini" label="MOD_PWEBCONTACT_TOGGLER_ICON_ICOMOON" description="MOD_PWEBCONTACT_TOGGLER_ICON_ICOMOON_DESC" />
+				
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_VERTICAL_TOGGLER_HEADER" class="pweb-description" />
+				<field name="toggler_vertical" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_VERTICAL_TOGGLER" description="MOD_PWEBCONTACT_VERTICAL_TOGGLER_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="toggler_rotate" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_TOGGLER_ROTATE" description="MOD_PWEBCONTACT_TOGGLER_ROTATE_DESC">
+					<option value="-1">MOD_PWEBCONTACT_OPTION_ROTATE_LEFT</option>
+					<option value="1">MOD_PWEBCONTACT_OPTION_ROTATE_RIGHT</option>
+				</field>
+				<field name="toggler_font" type="filelist" label="MOD_PWEBCONTACT_TOGGLER_FONT" description="MOD_PWEBCONTACT_TOGGLER_FONT_DESC" 
+					directory="media/mod_pwebcontact/images/fonts" default="NotoSans-Regular" filter="\.ttf$" stripext="true" hide_default="true" hide_none="true" />
+				
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_TOGGLER_HEADER" />
+				<field name="toggler_width" type="text" size="10" class="pweb-filter-int input-mini"
+					label="MOD_PWEBCONTACT_TOGGLER_WIDTH" description="MOD_PWEBCONTACT_TOGGLER_WIDTH_DESC" />
+				<field name="toggler_height" type="text" size="10" class="pweb-filter-int input-mini"
+					label="MOD_PWEBCONTACT_TOGGLER_HEIGHT" description="MOD_PWEBCONTACT_TOGGLER_HEIGHT_DESC" />
+				<field name="toggler_font_size" type="text" default="12px" filter="string" class="pweb-filter-unit input-mini" size="10" 
+					label="MOD_PWEBCONTACT_TOGGLER_FONT_SIZE" description="MOD_PWEBCONTACT_TOGGLER_FONT_SIZE_DESC" />
+				<field name="toggler_font_family" type="text" filter="string" 
+					label="MOD_PWEBCONTACT_TOGGLER_FONT_FAMILY" description="MOD_PWEBCONTACT_TOGGLER_FONT_FAMILY_DESC" />
+				
+			</fieldset>
+			
+	<!-- Fields Configuration -->
+			<fieldset name="FIELDS">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field type="pwebfields" name="fields" filter="raw" />
+				
+			</fieldset>
+			
+	<!-- Upload -->
+			<fieldset name="UPLOAD">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field name="show_upload" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_SHOW_UPLOAD" description="MOD_PWEBCONTACT_SHOW_UPLOAD_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">MOD_PWEBCONTACT_OPTION_REQUIRE</option>
+				</field>
+				<field name="attachment_type" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_ATTACHMENT_TYPE" description="MOD_PWEBCONTACT_ATTACHMENT_TYPE_DESC">
+					<option value="1">MOD_PWEBCONTACT_ATTACHMENT_FILE</option>
+					<option value="2">MOD_PWEBCONTACT_ATTACHMENT_LINK</option>
+				</field>
+				<field name="attachment_delete" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_ATTACHMENT_DELETE" description="MOD_PWEBCONTACT_ATTACHMENT_DELETE_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="upload_autostart" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_UPLOAD_AUTOSTART" description="MOD_PWEBCONTACT_UPLOAD_AUTOSTART_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field type="pwebtip" tip="upload_size" label="MOD_PWEBCONTACT_UPLOAD_SERVER_MAX_SIZE" />
+				<field name="upload_size_limit" type="text" filter="float" class="pweb-filter-upload-max-size input-mini" default="1" size="10" label="MOD_PWEBCONTACT_UPLOAD_SIZE_LIMIT" description="MOD_PWEBCONTACT_UPLOAD_SIZE_LIMIT_DESC"/>
+				<field name="upload_files_limit" type="text" filter="integer" class="pweb-filter-float input-mini" default="5" size="10" label="MOD_PWEBCONTACT_UPLOAD_FILES_LIMIT" description="MOD_PWEBCONTACT_UPLOAD_FILES_LIMIT_DESC"/>
+				<field name="upload_allowed_ext" type="text" default="gif|jpe?g|png|doc?x|odt|txt|pdf|zip" size="60" class="pweb-filter-ext input-xxlarge" label="MOD_PWEBCONTACT_UPLOAD_ALLOWED_EXTENSIONS" description="MOD_PWEBCONTACT_UPLOAD_ALLOWED_EXTENSIONS_DESC"/>
+				<field name="upload_show_limits" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_UPLOAD_SHOW_LIMITS" description="MOD_PWEBCONTACT_UPLOAD_SHOW_LIMITS_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="upload_tooltip" type="text" class="input-xlarge" size="50" label="MOD_PWEBCONTACT_UPLOAD_TIP" description="MOD_PWEBCONTACT_UPLOAD_TIP_DESC" />
+				<field name="upload_label" type="text" size="30" label="MOD_PWEBCONTACT_UPLOAD_LABEL" description="MOD_PWEBCONTACT_UPLOAD_LABEL_DESC" />
+				<field type="pwebtip" tip="upload_path" label="MOD_PWEBCONTACT_UPLOAD_PATH" description="MOD_PWEBCONTACT_UPLOAD_PATH_DESC" />
+			</fieldset>
+			
+	<!-- Email Configuration -->
+			<fieldset name="EMAIL">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_EMAIL_ADDRESSES_HEADER" />
+				<field name="email_from" type="text" validate="pwebEmails" class="pweb-filter-emails" size="30" label="MOD_PWEBCONTACT_EMAIL_FROM" description="MOD_PWEBCONTACT_EMAIL_FROM_DESC" />
+				<field name="email_to" type="text" validate="pwebEmails" class="pweb-filter-emails input-xlarge" size="50" label="MOD_PWEBCONTACT_EMAIL_TO" description="MOD_PWEBCONTACT_EMAIL_TO_DESC" />
+				<field name="email_to_list" type="textarea" filter="safehtml" cols="34" rows="5" validate="pwebEmailRecipients" class="pweb-filter-emailRecipients input-xlarge" label="MOD_PWEBCONTACT_EMAIL_TO_LIST" description="MOD_PWEBCONTACT_EMAIL_TO_LIST_DESC" />
+				<field name="email_bcc" type="text" validate="pwebEmails" class="pweb-filter-emails input-xlarge" size="50" label="MOD_PWEBCONTACT_EMAIL_BCC" description="MOD_PWEBCONTACT_EMAIL_BCC_DESC" />
+				<field name="email_replyto" type="text" validate="email" class="pweb-filter-email" size="30" label="MOD_PWEBCONTACT_EMAIL_REPLYTO" description="MOD_PWEBCONTACT_EMAIL_REPLYTO_DESC" />
+				<field name="email_replyto_name" type="text" filter="string" size="30" label="MOD_PWEBCONTACT_EMAIL_REPLYTO_NAME" description="MOD_PWEBCONTACT_EMAIL_REPLYTO_NAME_DESC" />
+				<field name="email_user" type="user" label="MOD_PWEBCONTACT_EMAIL_USER" description="MOD_PWEBCONTACT_EMAIL_USER_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_EMAIL_SUBJECT_HEADER" />
+				<field name="email_subject" type="text" filter="string" class="input-xxlarge" size="60" label="MOD_PWEBCONTACT_EMAIL_SUBJECT" description="MOD_PWEBCONTACT_EMAIL_SUBJECT_DESC" />
+				<field name="email_subject_sfx" type="radio" class="btn-group" default="2" label="MOD_PWEBCONTACT_EMAIL_SUBJECT_SFX" description="MOD_PWEBCONTACT_EMAIL_SUBJECT_SFX_DESC">
+					<option value="0">JNo</option>
+					<option value="1">MOD_PWEBCONTACT_SITENAME</option>
+					<option value="2">MOD_PWEBCONTACT_PAGE_TITLE</option>
+					<option value="3">MOD_PWEBCONTACT_FORM_FIELD</option>
+				</field>
+				
+				<field name="ticket_enable" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_TICKET" description="MOD_PWEBCONTACT_TICKET_DESC">
+					<option value="0">JNo</option>
+					<option value="1">MOD_PWEBCONTACT_TICKET_DATETIME</option>
+					<option value="2">MOD_PWEBCONTACT_TICKET_COUNTER</option>
+				</field>
+				<field name="ticket_format" type="text" filter="string" size="30" label="MOD_PWEBCONTACT_TICKET_FORMAT" description="MOD_PWEBCONTACT_TICKET_FORMAT_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_EMAIL_OPTIONS_HEADER" />
+				<field name="msg_success" type="text" filter="string" size="60" class="input-xxlarge" label="MOD_PWEBCONTACT_MSG_SUCCESS" description="MOD_PWEBCONTACT_MSG_SUCCESS_DESC" />
+				<field name="email_copy" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_EMAIL_COPY" description="MOD_PWEBCONTACT_EMAIL_COPY_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="email_autoreply" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_EMAIL_AUTOREPLY" description="MOD_PWEBCONTACT_EMAIL_AUTOREPLY_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="reset_form" type="list" default="1" label="MOD_PWEBCONTACT_RESET_FORM" description="MOD_PWEBCONTACT_RESET_FORM_DESC">
+					<option value="0">JNo</option>
+					<option value="1">MOD_PWEBCONTACT_RESET_OPTION_AFTER_SENT</option>
+					<option value="2">MOD_PWEBCONTACT_RESET_OPTION_AFTER_CLOSE</option>
+					<option value="3">MOD_PWEBCONTACT_RESET_OPTION_BUTTON</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_ADVANCED_HEADER" />
+				<field name="server_sender" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_EMAIL_SERVER_SENDER" description="MOD_PWEBCONTACT_EMAIL_SERVER_SENDER_DESC">
+					<option value="0">JNo</option>
+					<option value="1">MOD_PWEBCONTACT_YES_RECOMENDED</option>
+				</field>
+				
+			</fieldset>
+			
+	<!-- Email Configuration -->
+			<fieldset name="EMAIL_TMPL">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field name="email_lang" type="language" client="site" label="MOD_PWEBCONTACT_EMAIL_LANG_ADMIN" description="MOD_PWEBCONTACT_EMAIL_LANG_ADMIN_DESC">
+					<option value="">JOPTION_USE_DEFAULT</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_EMAIL_TMPL_LEGEND" class="pweb-description pweb-colapse" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_EMAIL_TMPL_HTML_HEADER" />
+				<field name="email_tmpl_html_admin" type="filelist" label="MOD_PWEBCONTACT_EMAIL_TMPL_HTML_ADMIN" description="MOD_PWEBCONTACT_EMAIL_TMPL_HTML_ADMIN_DESC" class="pweb-email-preview"
+					directory="media/mod_pwebcontact/email_tmpl" default="default" filter="\.html$" exclude="^index" stripext="true" hide_none="true" hide_default="true">
+					<option value="0">MOD_PWEBCONTACT_OPTION_EMAIL_TMPL_TEXT</option>
+				</field>
+				<field name="email_tmpl_html_user" type="filelist" label="MOD_PWEBCONTACT_EMAIL_TMPL_HTML_USER" description="MOD_PWEBCONTACT_EMAIL_TMPL_HTML_USER_DESC" class="pweb-email-preview"
+					directory="media/mod_pwebcontact/email_tmpl" default="default" filter="\.html$" exclude="^index" stripext="true" hide_none="true" hide_default="true" >
+					<option value="0">MOD_PWEBCONTACT_OPTION_EMAIL_TMPL_TEXT</option>
+				</field>
+				<field name="email_tmpl_html_autoreply" type="filelist" label="MOD_PWEBCONTACT_EMAIL_TMPL_HTML_AUTOREPLY" description="MOD_PWEBCONTACT_EMAIL_TMPL_HTML_AUTOREPLY_DESC" class="pweb-email-preview"
+					directory="media/mod_pwebcontact/email_tmpl" default="auto-reply" filter="\.html$" exclude="^index" stripext="true" hide_none="true" hide_default="true" >
+					<option value="0">MOD_PWEBCONTACT_OPTION_EMAIL_TMPL_TEXT</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_EMAIL_TMPL_TEXT_HEADER" />
+				<field name="email_tmpl_text_admin" type="textarea" filter="raw" cols="50" rows="15" class="input-xxlarge" label="MOD_PWEBCONTACT_EMAIL_TMPL_TEXT_ADMIN" description="MOD_PWEBCONTACT_EMAIL_TMPL_TEXT_ADMIN_DESC" />
+				<field name="email_tmpl_text_user" type="textarea" filter="raw" cols="50" rows="15" class="input-xxlarge" label="MOD_PWEBCONTACT_EMAIL_TMPL_TEXT_USER" description="MOD_PWEBCONTACT_EMAIL_TMPL_TEXT_USER_DESC" />
+				<field name="email_tmpl_text_autoreply" type="textarea" filter="raw" cols="50" rows="15" class="input-xxlarge" label="MOD_PWEBCONTACT_EMAIL_TMPL_TEXT_AUTOREPLY" description="MOD_PWEBCONTACT_EMAIL_TMPL_TEXT_AUTOREPLY_DESC" />
+								
+			</fieldset>
+			
+	<!-- Events Configuration -->
+			<fieldset name="EVENTS">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field name="open_toggler" type="radio" class="btn-group" default="0" 
+					label="MOD_PWEBCONTACT_OPEN_CONTAINER" description="MOD_PWEBCONTACT_OPEN_CONTAINER_DESC">
+					<option value="0">JNo</option>
+					<option value="1">MOD_PWEBCONTACT_OPTION_OPEN_ON_LOAD</option>
+					<option value="2">MOD_PWEBCONTACT_OPTION_OPEN_ON_SCROLL</option>
+					<option value="3">MOD_PWEBCONTACT_OPTION_OPEN_ON_EXIT</option>
+				</field>
+				<field name="open_count" type="text" filter="integer" class="pweb-filter-int input-mini" default="1" size="10" 
+					label="MOD_PWEBCONTACT_OPEN_COUNT" description="MOD_PWEBCONTACT_OPEN_COUNT_DESC" />
+				<field name="open_delay" type="text" filter="integer" class="pweb-filter-int input-mini" default="1000" size="10" 
+					label="MOD_PWEBCONTACT_OPEN_DELAY" description="MOD_PWEBCONTACT_OPEN_DELAY_DESC" />
+					
+				<field name="close_toggler" type="radio" class="btn-group" default="0" 
+					label="MOD_PWEBCONTACT_CLOSE_CONTAINER" description="MOD_PWEBCONTACT_CLOSE_CONTAINER_DESC">
+					<option value="0">JNo</option>
+					<option value="1">MOD_PWEBCONTACT_OPTION_CLOSE_AFTER_SEND</option>
+				</field>
+				<field name="close_delay" type="text" filter="integer" class="pweb-filter-int input-mini" default="0" size="10" 
+					label="MOD_PWEBCONTACT_CLOSE_DELAY" description="MOD_PWEBCONTACT_CLOSE_DELAY_DESC" />
+				
+				<field name="open_counter_storage" type="radio" class="btn-group" default="1" 
+					label="MOD_PWEBCONTACT_OPEN_COUNTER_STORAGE" description="MOD_PWEBCONTACT_OPEN_COUNTER_STORAGE_DESC">
+					<option value="1">MOD_PWEBCONTACT_OPTION_COOKIE</option>
+					<option value="2">MOD_PWEBCONTACT_OPTION_SESSION</option>
+				</field>
+				<field name="cookie_lifetime" type="text" filter="integer" class="pweb-filter-int input-mini" default="30" size="10" 
+					label="MOD_PWEBCONTACT_COOKIE_LIFETIME" description="MOD_PWEBCONTACT_COOKIE_LIFETIME_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_SLIDEBOX_HEADER" />
+				<field name="close_other" type="radio" class="btn-group" default="1" 
+					label="MOD_PWEBCONTACT_CLOSE_OTHER" description="MOD_PWEBCONTACT_CLOSE_OTHER_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="slide_duration" type="text" filter="integer" class="pweb-filter-int input-mini" default="400" size="10" 
+					label="MOD_PWEBCONTACT_SLIDE_DURATION" description="MOD_PWEBCONTACT_SLIDE_DURATION_DESC" />
+				<field name="slide_transition" type="list" 
+					label="MOD_PWEBCONTACT_SLIDE_TRANSITION" description="MOD_PWEBCONTACT_SLIDE_TRANSITION_DESC">
+					<option value="-1">JOPTION_USE_DEFAULT</option>
+					<option value="linear">linear</option>
+					<option value="swing">swing</option>
+					<option value="-2">MOD_PWEBCONTACT_SLIDE_TRANSITION_JQUERY_UI</option>
+					<option value="easeInQuad">easeInQuad</option>
+					<option value="easeOutQuad">easeOutQuad</option>
+					<option value="easeInOutQuad">easeInOutQuad</option>
+					<option value="easeInCubic">easeInCubic</option>
+					<option value="easeOutCubic">easeOutCubic</option>
+					<option value="easeInOutCubic">easeInOutCubic</option>
+					<option value="easeInQuart">easeInQuart</option>
+					<option value="easeOutQuart">easeOutQuart</option>
+					<option value="easeInOutQuart">easeInOutQuart</option>
+					<option value="easeInQuint">easeInQuint</option>
+					<option value="easeOutQuint">easeOutQuint</option>
+					<option value="easeInOutQuint">easeInOutQuint</option>
+					<option value="easeInExpo">easeInExpo</option>
+					<option value="easeOutExpo">easeOutExpo</option>
+					<option value="easeInOutExpo">easeInOutExpo</option>
+					<option value="easeInSine">easeInSine</option>
+					<option value="easeOutSine">easeOutSine</option>
+					<option value="easeInOutSine">easeInOutSine</option>
+					<option value="easeInCirc">easeInCirc</option>
+					<option value="easeOutCirc">easeOutCirc</option>
+					<option value="easeInOutCirc">easeInOutCirc</option>
+					<option value="easeInElastic">easeInElastic</option>
+					<option value="easeOutElastic">easeOutElastic</option>
+					<option value="easeInOutElastic">easeInOutElastic</option>
+					<option value="easeInBack">easeInBack</option>
+					<option value="easeOutBack">easeOutBack</option>
+					<option value="easeInOutBack">easeInOutBack</option>
+					<option value="easeInBounce">easeInBounce</option>
+					<option value="easeOutBounce">easeOutBounce</option>
+					<option value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_MODAL_HEADER" />
+				<field name="modal_disable_close" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_MODAL_DISABLE_CLOSE" description="MOD_PWEBCONTACT_MODAL_DISABLE_CLOSE_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_REDIRECT_HEADER" />
+				<field name="redirect_itemid" type="menuitem" state="1" disable="menulink, separator" label="MOD_PWEBCONTACT_REDIRECT_ITEMID" description="MOD_PWEBCONTACT_REDIRECT_ITEMID_DESC">
+					<option value="">JOPTION_DO_NOT_USE</option>
+				</field>
+				<field name="redirect_url" type="text" size="60" class="pweb-filter-url input-xxlarge" label="MOD_PWEBCONTACT_REDIRECT_URL" description="MOD_PWEBCONTACT_REDIRECT_URL_DESC" />
+				<field name="redirect_delay" type="text" filter="integer" class="pweb-filter-int input-mini" default="3" size="10" label="MOD_PWEBCONTACT_REDIRECT_DELAY" description="MOD_PWEBCONTACT_REDIRECT_DELAY_DESC" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_ADWORDS_CONVERSION_TRACKER_HEADER" />
+				<field name="adwords_url" type="pwebadwords" size="50" class="pweb-filter-url input-xxlarge" label="MOD_PWEBCONTACT_ADWORDS_CONVERSION_URL" description="MOD_PWEBCONTACT_ADWORDS_CONVERSION_URL_DESC" />
+		 		
+				<field type="spacer" name="MOD_PWEBCONTACT_ADCENTER_CONVERSION_TRACKER_HEADER" />
+				<field name="adcenter_url" type="pwebadcenter" size="50" class="pweb-filter-url input-xxlarge" label="MOD_PWEBCONTACT_ADCENTER_CONVERSION_URL" description="MOD_PWEBCONTACT_ADCENTER_CONVERSION_URL_DESC" />
+				
+				<field type="spacer" class="pweb-analytics-code pweb-description" name="MOD_PWEBCONTACT_ANALYTICS_TRACKER_HEADER" />
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_EVENTS_SCRIPT_HEADER" />
+				<field name="onload" type="textarea" filter="safehtml" cols="50" rows="5" class="input-xxlarge pweb-filter-javascript" label="MOD_PWEBCONTACT_ONLOAD_SCRIPT" description="MOD_PWEBCONTACT_ONLOAD_SCRIPT_DESC" />
+				<field name="onopen" type="textarea" filter="safehtml" cols="50" rows="5" class="input-xxlarge pweb-filter-javascript" label="MOD_PWEBCONTACT_ONOPEN_SCRIPT" description="MOD_PWEBCONTACT_ONOPEN_SCRIPT_DESC" />
+				<field name="oncomplete" type="textarea" filter="safehtml" cols="50" rows="5" class="input-xxlarge pweb-filter-javascript" label="MOD_PWEBCONTACT_ONCOMPLETE_SCRIPT" description="MOD_PWEBCONTACT_ONCOMPLETE_SCRIPT_DESC" />
+				<field name="onerror" type="textarea" filter="safehtml" cols="50" rows="5" class="input-xxlarge pweb-filter-javascript" label="MOD_PWEBCONTACT_ONERROR_SCRIPT" description="MOD_PWEBCONTACT_ONERROR_SCRIPT_DESC" />
+				<field name="onclose" type="textarea" filter="safehtml" cols="50" rows="5" class="input-xxlarge pweb-filter-javascript" label="MOD_PWEBCONTACT_ONCLOSE_SCRIPT" description="MOD_PWEBCONTACT_ONCLOSE_SCRIPT_DESC" />
+			
+			</fieldset>
+			
+	<!-- Integrations -->
+			<fieldset name="INTEGRATIONS">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+								
+				<!-- PWeb Contact Form Data -->
+				<!-- <field name="store_data" type="radio" class="btn-group" default="0" component="pwebcontact" validate="pwebComponentExists" label="MOD_PWEBCONTACT_STORE_DATA" description="MOD_PWEBCONTACT_STORE_DATA_DESC" message="MOD_PWEBCONTACT_STORE_DATA_MESSAGE">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>-->
+				<!-- Acymailing -->
+				<!-- <field type="spacer" name="MOD_PWEBCONTACT_ACYMAILING_INTEGRATION_HEADER" />
+				<field name="acymailing_mailto" type="pwebacymailinglists" label="MOD_PWEBCONTACT_ACYMAILING_MAILTO" description="MOD_PWEBCONTACT_ACYMAILING_MAILTO_DESC"/>
+				<field name="acymailing_subscribe" type="pwebacymailinglists" label="MOD_PWEBCONTACT_ACYMAILING_SUBSCRIBE" description="MOD_PWEBCONTACT_ACYMAILING_SUBSCRIBE_DESC"/>
+				<field name="acymailing_subscribe_label" type="text" class="input-xlarge" label="MOD_PWEBCONTACT_ACYMAILING_SUBSCRIBE_LABEL" description="MOD_PWEBCONTACT_ACYMAILING_SUBSCRIBE_LABEL_DESC"/>
+				<field name="acymailing_subscribe_checked" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_ACYMAILING_SUBSCRIBE_CHECKED" description="MOD_PWEBCONTACT_ACYMAILING_SUBSCRIBE_CHECKED_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>-->
+				<!-- Community Builder -->
+				<field type="spacer" name="MOD_PWEBCONTACT_CB_INTEGRATION_HEADER" />
+				<field name="comprofiler" type="radio" class="btn-group" default="0" component="comprofiler" validate="pwebComponentExists" label="MOD_PWEBCONTACT_CB" description="MOD_PWEBCONTACT_CB_DESC" message="MOD_PWEBCONTACT_CB_MESSAGE">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2" class="pweb-component-view">MOD_PWEBCONTACT_CB_ONLY_USER_PROFILE</option>
+				</field>
+				<!-- JomSocial -->
+				<field type="spacer" name="MOD_PWEBCONTACT_JOMSOCIAL_INTEGRATION_HEADER" />
+				<field name="jomsocial" type="radio" class="btn-group" default="0" component="community" validate="pwebComponentExists" label="MOD_PWEBCONTACT_JOMSOCIAL" description="MOD_PWEBCONTACT_JOMSOCIAL_DESC" message="MOD_PWEBCONTACT_JOMSOCIAL_MESSAGE">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2" class="pweb-component-view">MOD_PWEBCONTACT_JOMSOCIAL_ONLY_USER_PROFILE</option>
+				</field>
+				<!-- SobiPro -->
+				<field type="spacer" name="MOD_PWEBCONTACT_SOBIPRO_INTEGRATION_HEADER" />
+				<field name="sobipro" type="radio" class="btn-group" default="0" component="sobipro" validate="pwebComponentExists" label="MOD_PWEBCONTACT_SOBIPRO" description="MOD_PWEBCONTACT_SOBIPRO_DESC" message="MOD_PWEBCONTACT_SOBIPRO_MESSAGE">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2" class="pweb-component-view">MOD_PWEBCONTACT_SOBIPRO_ONLY_ENTRY_VIEW</option>
+				</field>
+				<!-- Zoo -->
+				<field type="spacer" name="MOD_PWEBCONTACT_ZOO_INTEGRATION_HEADER" />
+				<field name="zoo" type="radio" class="btn-group" default="0" component="zoo" validate="pwebComponentExists" label="MOD_PWEBCONTACT_ZOO" description="MOD_PWEBCONTACT_ZOO_DESC" message="MOD_PWEBCONTACT_ZOO_MESSAGE">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2" class="pweb-component-view">MOD_PWEBCONTACT_ZOO_ONLY_ITEM_VIEW</option>
+				</field>
+				
+			</fieldset>
+			
+	<!-- Documentation -->
+			<fieldset name="DOCUMENTATION">
+				
+				<field type="pwebtip" tip="language" label="MOD_PWEBCONTACT_LANGUAGE_OVERRIDE" />
+				<field type="pwebtip" tip="article" label="MOD_PWEBCONTACT_ADD_TO_ARTICLE" />
+				<field type="pwebtip" tip="menu" label="MOD_PWEBCONTACT_ADD_TO_MENU" />
+				<field type="pwebtip" tip="open" label="MOD_PWEBCONTACT_OPEN_FROM" />
+				<field type="pwebtip" tip="preload" label="MOD_PWEBCONTACT_PRELOAD_FIELDS" />
+				<field type="pwebtip" tip="javascript" label="MOD_PWEBCONTACT_JAVASCRIPT" />
+				
+			</fieldset>
+			
+	<!-- Advanced Configuration -->
+			<fieldset name="advanced">
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_TOOLTIPS" />
+				
+				<field name="debug" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_DEBUG" description="MOD_PWEBCONTACT_DEBUG_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field name="rtl" type="radio" class="btn-group" default="2" label="MOD_PWEBCONTACT_RTL" description="MOD_PWEBCONTACT_RTL_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">JGLOBAL_AUTO</option>
+				</field>
+				<field name="filter_browsers" type="list" default="0" label="MOD_PWEBCONTACT_FILTER_BROWSERS" description="MOD_PWEBCONTACT_FILTER_BROWSERS_DESC">
+					<option value="0">MOD_PWEBCONTACT_DO_NOT_FILTER_BROWSERS</option>
+					<option value="1">MOD_PWEBCONTACT_FILTER_MOBILE_BROWSERS</option>
+					<option value="2">MOD_PWEBCONTACT_FILTER_DESKTOP_BROWSERS</option>
+				</field>
+				<field type="spacer" name="MOD_PWEBCONTACT_CAPTCHA_HEADER" />
+				<field name="captcha" type="plugins" folder="captcha" filter="cmd" default="0"
+					label="MOD_PWEBCONTACT_CAPTCHA" description="MOD_PWEBCONTACT_CAPTCHA_DESC">
+					<option value="-1">JOPTION_USE_DEFAULT</option>
+					<option value="0">JDISABLED</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_ADVANCED_HEADER" />
+				<field name="root_path" type="radio" class="btn-group" default="0" validate="pwebcopyajax" label="MOD_PWEBCONTACT_USE_ROOT_PATH" description="MOD_PWEBCONTACT_USE_ROOT_PATH_DESC">
+					<option value="0">MOD_PWEBCONTACT_NO_RECOMENDED</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_CONFIG_LOAD_FILES" />
+				<field name="load_bootstrap" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_BOOTSTRAP" description="MOD_PWEBCONTACT_LOAD_BOOTSTRAP_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_bootstrap_css" type="radio" class="btn-group" default="2" label="MOD_PWEBCONTACT_LOAD_BOOTSTRAP_CSS" description="MOD_PWEBCONTACT_LOAD_BOOTSTRAP_CSS_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+					<option value="2">MOD_PWEBCONTACT_OPTION_LOAD_LEGACY_BOOTSTRAP_CSS</option>
+				</field>
+				<field name="boostrap_glyphicons" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_BOOTSTRAP_GLYPHICONS" description="MOD_PWEBCONTACT_BOOTSTRAP_GLYPHICONS_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_jquery" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_JQUERY" description="MOD_PWEBCONTACT_LOAD_JQUERY_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_jquery_ui" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_JQUERY_UI" description="MOD_PWEBCONTACT_LOAD_JQUERY_UI_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_jquery_ui_effects" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_JQUERY_UI_EFFECTS" description="MOD_PWEBCONTACT_LOAD_JQUERY_UI_EFFECTS_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_jquery_validate" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_JQUERY_VALIDATE" description="MOD_PWEBCONTACT_LOAD_JQUERY_VALIDATE_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_jquery_fileupload" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_JQUERY_FILEUPLOAD" description="MOD_PWEBCONTACT_LOAD_JQUERY_FILEUPLOAD_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_jquery_cookie" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_JQUERY_COOKIE" description="MOD_PWEBCONTACT_LOAD_JQUERY_COOKIE_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="load_icomoon" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_LOAD_ICOMOON" description="MOD_PWEBCONTACT_LOAD_ICOMOON_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_UPDATES_HEADER" />
+				<field name="feed" type="pweb" validate="pwebUpdateStream" default="1" class="input-xlarge"
+					label="MOD_PWEBCONTACT_FEED" description="MOD_PWEBCONTACT_FEED_DESC">
+					<option value="0">JNo</option>
+					<option value="1">MOD_PWEBCONTACT_OPTION_FEED_BOTH_UPDATES</option>
+					<option value="2">MOD_PWEBCONTACT_OPTION_FEED_JOOMLA_UPDATES</option>
+					<option value="3">MOD_PWEBCONTACT_OPTION_FEED_EXTENSION_UPDATES</option>
+				</field>
+				
+				<field type="spacer" name="MOD_PWEBCONTACT_JOOMLA_HEADER" />
+				<field name="moduleclass_sfx" type="text" size="50" class="input-xlarge" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="cache_css" type="radio" class="btn-group" default="1" label="MOD_PWEBCONTACT_CACHE_CSS" description="MOD_PWEBCONTACT_CACHE_CSS_DESC">
+					<option value="0">JNo</option>
+					<option value="1">JYes</option>
+				</field>
+				<field name="cache_time" type="hidden" default="0" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="2">MOD_PWEBCONTACT_EXTENSION_CACHING</option>
+				</field>
+				<field name="cachemode" type="hidden" default="static">
+					<option value="static"></option>
+				</field>
+				
+				<field name="demo" type="radio" class="btn-group" default="0" label="MOD_PWEBCONTACT_DEMO" description="MOD_PWEBCONTACT_DEMO_DESC">
+					<option value="0">MOD_PWEBCONTACT_NO_RECOMENDED</option>
+					<option value="1">JYes</option>
+				</field>
+				
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>

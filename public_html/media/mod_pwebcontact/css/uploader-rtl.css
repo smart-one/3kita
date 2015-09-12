@@ -1,0 +1,26 @@
+/**
+* @version 3.0
+* @package PWebContact
+* @copyright © 2013 Perfect Web sp. z o.o., All rights reserved. http://www.perfect-web.co
+* @license GNU General Public License http://www.gnu.org/licenses/gpl-3.0.html
+* @author Piotr Moćko
+*/
+
+/* files list */
+.pweb-rtl .pweb-uploader .files .size, 
+.pweb-rtl .pweb-uploader .files .error,
+.pweb-rtl .pweb-uploader .files .cancel,
+.pweb-rtl .pweb-uploader .files .delete {
+	margin-left: 0;
+	margin-right: 5px;
+}
+.pweb-rtl .pweb-uploader .files > div > span,
+.pweb-rtl .pweb-uploader .files > div > a {
+	float: right;
+}
+.pweb-rtl .pweb-uploader .files .progress {
+	clear: right;
+}
+.pweb-rtl .pweb-uploader .files .progress .bar.progress-bar {
+	float: right;
+}

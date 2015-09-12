@@ -1,0 +1,116 @@
+/**
+* @version 3.1.2
+* @package PWebContact
+* @copyright © 2013 Perfect Web sp. z o.o., All rights reserved. http://www.perfect-web.co
+* @license GNU General Public License http://www.gnu.org/licenses/gpl-3.0.html
+* @author Piotr Moćko
+*/
+
+/* add files button */
+.pweb-uploader .fileinput-button {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+}
+.pweb-uploader .fileinput-button input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	font-size: 200px;
+	direction: ltr;
+	cursor: pointer;
+	opacity: 0;
+	-ms-filter: 'alpha(opacity=0)';
+}
+
+/* drop zone */
+.pwebcontact-box .pweb-dropzone {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 120%;
+}
+.pwebcontact-box .pweb-dropzone > div {
+	position: relative;
+	top: 47%;
+	left: 0;
+}
+.pwebcontact-box.pweb-dragged .pweb-dropzone {
+	display: block;
+	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* files list */
+.pweb-uploader .files > div {
+	margin: 7px 0 0;
+}
+.pweb-uploader .files .size, 
+.pweb-uploader .files .error,
+.pweb-uploader .files .cancel,
+.pweb-uploader .files .delete {
+	margin-left: 5px;
+}
+.pweb-uploader .files .progress {
+	height: 7px;
+	margin: 0;
+	float: none;
+}
+.pweb-uploader .templates {
+	display: none !important;
+}
+
+/* icons */
+.pweb-icomoon .pweb-uploader .icon-plus-sign,
+.pweb-icomoon .pweb-uploader .icon-warning-sign,
+.pweb-icomoon .pweb-uploader .icon-ok,
+.pweb-icomoon .pweb-uploader .icon-upload,
+.pweb-icomoon .pweb-uploader .icon-remove,
+.pweb-icomoon .pweb-uploader .icon-trash {
+	background-image: none !important;
+	margin: 0;
+}
+.pweb-icomoon .icon-plus-sign:before,
+.pweb-icomoon .icon-warning-sign:before,
+.pweb-icomoon .icon-ok:before,
+.pweb-icomoon .icon-upload:before,
+.pweb-icomoon .icon-remove:before,
+.pweb-icomoon .icon-trash:before {
+	font-family: 'IcoMoon';
+	font-style: normal;
+	speak: none;
+	background: none;
+}
+.pweb-icomoon .icon-plus-sign:before {
+	content: "\2a";
+}
+.pweb-icomoon .icon-warning-sign:before {
+	content: "\48";
+}
+.pweb-icomoon .icon-ok:before {
+	content: "\47";
+}
+.pweb-icomoon .icon-upload:before {
+	content: "\e022";
+}
+.pweb-icomoon .icon-remove:before {
+	content: "\4a";
+}
+.pweb-icomoon .icon-trash:before {
+	content: "\4c";
+}
+
+.pweb-glyphicons .pweb-uploader .icon-plus-sign:before,
+.pweb-glyphicons .pweb-uploader .icon-warning-sign:before,
+.pweb-glyphicons .pweb-uploader .icon-ok:before,
+.pweb-glyphicons .pweb-uploader .icon-upload:before,
+.pweb-glyphicons .pweb-uploader .icon-remove:before,
+.pweb-glyphicons .pweb-uploader .icon-trash:before {
+	font-family: none !important;
+	content: "" !important;
+}
